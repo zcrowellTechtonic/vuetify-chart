@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/views/Home'
-// import VueChartJS from '@/views/VueChartJS'
+import VueChartJS from '@/views/VueChartJS'
 // import VueChartKick from '@/views/VueChartKick'
 // import VueCharts from '@/views/VueCharts'
 
@@ -14,11 +14,11 @@ export default new Router({
       name: 'Home',
       component: Home
     },
-    // {
-    //   path: '/chartjs',
-    //   name: 'VueChartJS',
-    //   component: VueChartJS
-    // },
+    {
+      path: '/chartjs',
+      name: 'VueChartJS',
+      component: VueChartJS
+    },
     // {
     //   path: '/chartkick',
     //   name: 'VueChartKick',

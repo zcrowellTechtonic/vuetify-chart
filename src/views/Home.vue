@@ -1,27 +1,50 @@
 <template>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container">
-        <h1>Creating Beautiful Charts Using Vue.js Wrappers For Chart.js</h1>
-        <h2>
-          Read the article on SitePoint:
-          <a href="https://www.sitepoint.com/creating-beautiful-charts-vue-chart-js/">
-            Creating Beautiful Charts Using Vue.js Wrappers for Chart.js
-          </a>
-        </h2>
-        <h3>
-          Download the repo from GitHub:
-          <a href="https://github.com/sitepoint-editors/vue-charts">
-            https://github.com/sitepoint-editors/vue-charts
-          </a>
-        </h3>
-      </div>
-    </div>
-  </section>
+  <v-container fluid>
+    <v-layout text-xs-center class="tester">
+      <v-flex mb-4 ma-2>
+        <LowRiskProjects/>
+      </v-flex>
+      <v-flex mb-4 ma-2>
+        <MediumRiskProjects/>
+      </v-flex>
+      <v-flex mb-4 ma-2>
+        <HighRiskProjectsTwo/>
+      </v-flex>
+    </v-layout>
+
+    <v-layout wrap>
+      <v-flex mb-4 white>
+        <v-card>
+          <p class="text-sm-center mt-3">Monthly Breakdown</p>
+          <BarChart></BarChart>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
+import LowRiskProjects from "../components/LowRiskProjects";
+import MediumRiskProjects from "../components/MediumRiskProjects";
+import HighRiskProjectsTwo from "../components/HighRiskProjectsTwo";
+import BarChart from "../components/charts/BarChart";
+
 export default {
-  name: 'home'
-}
+  name: "RiskGrid",
+  components: {
+    LowRiskProjects,
+    MediumRiskProjects,
+    HighRiskProjectsTwo,
+    BarChart
+  }
+};
 </script>
+
+<style>
+@media (max-width: 1199.98px) {
+  .tester {
+    display: flex;
+    flex-direction: column;
+  }
+}
+</style>
