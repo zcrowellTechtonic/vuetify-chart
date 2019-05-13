@@ -1,9 +1,9 @@
 <script>
   //Importing Bar class from the vue-chartjs wrapper
-  import { Line } from 'vue-chartjs'
+  import { Doughnut } from 'vue-chartjs'
   //Exporting this so it can be used in other components
   export default {
-    extends: Line,
+    extends: Doughnut,
     data () {
       return {
         datacollection: {
