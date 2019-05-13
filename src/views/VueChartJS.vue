@@ -17,6 +17,7 @@
       </v-flex>
     </v-layout>
 
+
      <v-layout text-xs-center wrap>
       <v-flex mb-4 ma-2 white>
          <h3>Doughnut Chart</h3>
