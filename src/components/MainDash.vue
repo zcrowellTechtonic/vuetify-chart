@@ -17,7 +17,9 @@
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
+            <router-link to="/">
             <v-list-tile-title>Risk Dashboard</v-list-tile-title>
+            </router-link>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile @click="sideDrawerLog">
