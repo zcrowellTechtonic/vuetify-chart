@@ -1,10 +1,10 @@
 <template>
+<v-content>
   <v-app id="inspire">
       <v-toolbar color="blue-grey darken-1" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Dashboard</v-toolbar-title>
     </v-toolbar>
-    
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -17,7 +17,9 @@
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
+            <router-link to="/">
             <v-list-tile-title>Risk Dashboard</v-list-tile-title>
+            </router-link>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile @click="sideDrawerLog">
@@ -33,7 +35,9 @@
             <v-icon>bar_chart</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
+            <router-link to='/chartjs'>
             <v-list-tile-title>Reports</v-list-tile-title>
+            </router-link>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile @click="sideDrawerLog">
@@ -46,8 +50,8 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-
-    <RiskGrid></RiskGrid>
+    <router-view />
+    <!-- <RiskGrid></RiskGrid> -->
     <v-footer color="blue-grey darken-3" app>
         <v-spacer />
         <span
@@ -61,14 +65,15 @@
       <span class="white--text">&copy; 2019</span>
     </v-footer>
   </v-app>
+</v-content>
 </template>
 <script>
 
-import RiskGrid from "./RiskGrid";
+// import RiskGrid from "./components/RiskGrid";
   export default {
   name: "DashGrid",
   components: {
-      RiskGrid
+      // RiskGrid
   },
     data: () => ({
       drawer: null
