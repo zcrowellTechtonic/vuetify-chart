@@ -1,6 +1,6 @@
 <template>
   <v-card>
-       <v-toolbar color="light-blue" class="layout justify-center" dark>
+       <v-toolbar color="red" class="layout justify-center" dark>
           <v-toolbar-title>High Risk</v-toolbar-title>
           <v-spacer></v-spacer>
       </v-toolbar>
@@ -16,21 +16,32 @@
           <div>
             {{section.title}}   
           </div>
-           <v-badge color="red" class="mr-4">
+           <!-- <v-badge color="cyan darken-3" class="mr-4">
                <template v-slot:badge>
-                <span></span>
+                <span>9</span>
               </template>
-              </v-badge>
+              </v-badge> -->
         </template>
+         <v-chip color="cyan darken-3">3</v-chip>
+         <div  id="spinner-background-high" class="text-xs-center">
+            <h2 class="mb-2">Overall Health</h2>
+            <v-progress-circular
+              class="circle mb-3"
+              :rotate="360"
+              :size="150"
+              :width="20"
+              :value="value"
+              color="red"
+            >{{ value }}</v-progress-circular>
+          </div>
+          <router-link to="/projectinfo">
+          <v-btn>Project Details</v-btn>
+          </router-link>
         <v-card>
           <v-data-table :headers="headers" :items="desserts" class="elevation-1">
             <template v-slot:items="props">
               <td>{{ props.item.name }}</td>
               <td class="text-xs-right">{{ props.item.stats}}</td>
-              <!-- <td class="text-xs-right">{{ props.item.fat }}</td> -->
-              <!-- <td class="text-xs-right">{{ props.item.carbs }}</td> -->
-              <!-- <td class="text-xs-right">{{ props.item.protein }}</td> -->
-              <!-- <td class="text-xs-right">{{ props.item.iron }}</td> -->
             </template>
           </v-data-table>
         </v-card>
@@ -44,6 +55,8 @@ export default {
   
   data() {
     return {
+      interval: {},
+      value: "80%",
        project: [
       {
         complete: true,
@@ -98,6 +111,9 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style>
+#spinner-background-high {
+  background-color: rgba(92, 30, 30, 0.233);
+    border: 1px solid rgb(100, 100, 100);
+}
 </style>
