@@ -47,6 +47,7 @@
   import DoughnutChart from '@/components/charts/DoughnutChart'
   import PieChart from '@/components/charts/PieChart'
   import Reactive from '@/components/charts/Reactive'
+ 
 
   export default {
     name: 'VueChartJS',

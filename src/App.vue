@@ -1,10 +1,15 @@
 <template>
 <v-content>
+   
   <v-app id="inspire">
+    <!-- START OF TOOLBAR -->
       <v-toolbar color="blue-grey darken-1" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Dashboard</v-toolbar-title>
     </v-toolbar>
+    <!-- END OF TOOLBAR -->
+
+    <!-- START OF SIDE SLIDING NAV BAR -->
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -27,7 +32,9 @@
             <v-icon>build</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Projects</v-list-tile-title>
+            <router-link to='projectinfo'>
+            <v-list-tile-title>Project Info</v-list-tile-title>
+            </router-link>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile @click="sideDrawerLog">
@@ -36,7 +43,7 @@
           </v-list-tile-action>
           <v-list-tile-content>
             <router-link to='/chartjs'>
-            <v-list-tile-title>Reports</v-list-tile-title>
+            <v-list-tile-title>Vue Charts</v-list-tile-title>
             </router-link>
           </v-list-tile-content>
         </v-list-tile>
@@ -50,7 +57,13 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+    <!-- END OF NAV DRAWER -->
+
+    <!-- WHERE THE VIEWS USING ROUTER LINK ARE RENDERED -->
     <router-view />
+    <!-- WHERE THE VIEWS USING ROUTER LINK ARE RENDERED -->
+
+    <!-- START OF FOOTER -->
     <v-footer color="blue-grey darken-3" app>
         <v-spacer />
         <span
@@ -63,20 +76,20 @@
       </span>
       <span class="white--text">&copy; 2019</span>
     </v-footer>
-    <Tester></Tester>
+    <!-- END OF FOOTER  -->
   </v-app>
 </v-content>
 </template>
 <script>
 
-import Tester from "./components/Tester";
+
   export default {
   name: "DashGrid",
   components: {
-      Tester
+      
   },
     data: () => ({
-      drawer: null
+      drawer: false
     }),
     props: {
       source: String
@@ -93,6 +106,7 @@ import Tester from "./components/Tester";
 
 a {
   text-decoration: none;
+  color: #274046 !important;
 }
 
 #inspire {

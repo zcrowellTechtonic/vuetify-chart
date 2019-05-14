@@ -2,6 +2,8 @@
   <v-container fluid>
     <v-layout text-xs-center class="tester">
       <v-flex mb-4 ma-2>
+        <template>
+</template>
         <LowRiskProjects/>
       </v-flex>
       <v-flex mb-4 ma-2>
@@ -29,6 +31,7 @@ import MediumRiskProjects from "../components/MediumRiskProjects";
 import HighRiskProjectsTwo from "../components/HighRiskProjectsTwo";
 import BarChart from "../components/charts/BarChart";
 
+
 export default {
   name: "RiskGrid",
   components: {
@@ -36,7 +39,24 @@ export default {
     MediumRiskProjects,
     HighRiskProjectsTwo,
     BarChart
-  }
+  },
+  data () {
+      return {
+        interval: {},
+        value: 0
+      }
+    },
+    beforeDestroy () {
+      clearInterval(this.interval)
+    },
+    mounted () {
+      this.interval = setInterval(() => {
+        if (this.value === 100) {
+          return (this.value = 0)
+        }
+        this.value += 10
+      }, 1000)
+    }
 };
 </script>
 
