@@ -11,7 +11,7 @@
         <BarChart></BarChart>
       </v-flex>
       <v-flex mb-4 ma-2 white>
-        <h3>Bar Chart</h3>
+        <h3>Reactive Chart</h3>
         <Reactive :chart-data="datacollection"></Reactive>
 <v-btn class="button is-primary" @click="fillData()">Rando</v-btn>
       </v-flex>

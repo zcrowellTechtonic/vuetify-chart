@@ -4,7 +4,10 @@
               <v-toolbar-title>QA REPORT</v-toolbar-title> 
             </v-toolbar>
         <!-- <v-container> -->
-          <QAChart></QAChart>
+       
+                <QAChart></QAChart>
+         
+          
     <!-- </v-container> -->
     </div>
 </template>

@@ -19,7 +19,7 @@
       </v-flex>
     </v-layout>
 
-     <v-layout text-xs-center>
+     <v-layout text-xs-center wrap>
       <v-flex mb-4 ma-2 white>
         <QaCard></QaCard>
       </v-flex>
