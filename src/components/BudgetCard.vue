@@ -74,7 +74,7 @@ export default {
         if (this.valueRemaining === 100) {
           return (this.valueRemaining = 0)
         }
-        this.valueRemaining += 3
+        this.valueRemaining += 5
       }, 1000)
     }
 };
