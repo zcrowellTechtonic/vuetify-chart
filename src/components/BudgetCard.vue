@@ -1,42 +1,54 @@
 <template>
-  <v-card>
-    <v-toolbar class="layout justify-center">
-      <v-toolbar-title>Budget</v-toolbar-title>
+  <div>
+    <v-toolbar class="" color="grey lighten-2">
+      <v-chip color="green" text-color="white" class="subheading">
+      <v-avatar class="green darken-4 subheading" large>1</v-avatar>
+      {{ projectName }}
+    </v-chip>
+    <v-spacer></v-spacer>
+    <ProductSummaryCard></ProductSummaryCard>
     </v-toolbar>
+    <!-- BUDGET USED LOADER -->
     <v-container>
-       
-        <span class="layout justify-space-between">
-           <p class="font-weight-medium"> Used: </p> <v-chip color="primary" text-color="white">{{ valueUsed }}%</v-chip>
+        <span class="layout justify-space-between" dark>
+           <p class="font-weight-medium title"> Budget Used: </p> <v-chip color="primary" text-color="white">{{ valueUsed }}%</v-chip>
         </span>
-      <v-progress-linear height="30" 
+      <v-progress-linear 
+      height="30" 
+       :width="15"
       :value="valueUsed"
       color="teal"
       class="font-weight-medium"
       ></v-progress-linear>
     </v-container>
-         
+         <!-- REMAINING BUDGET LOADER -->
     <v-container>
-        
         <span class="layout justify-space-between">
-            <p class="font-weight-medium">Remaining:</p><v-chip color="primary" text-color="white">{{ valueRemaining }}%</v-chip>
+            <p class="font-weight-medium title">Budget Remaining:</p><v-chip color="primary" text-color="white">{{ valueRemaining }}%</v-chip>
         </span>
-        
       <v-progress-linear height="30" 
       :value="valueRemaining"
       color="orange"
       class="font-weight-medium"
       ></v-progress-linear>
     </v-container>
-  </v-card>
+</div>
 </template>
 
 <script>
+import ProductSummaryCard from './ProductSummaryCard'
 export default {
+      components: {
+        ProductSummaryCard
+      },
      data () {
       return {
-         interval: {},
-        valueUsed: 10,
-        valueRemaining: 20
+        projectName: 'Project Name',
+        intervalUsed: {},
+        intervalRemaining: {},
+        valueUsed: 0,
+        valueRemaining: 0,
+        value: 0
       }
       
     },
@@ -44,11 +56,25 @@ export default {
       clearInterval(this.interval)
     },
     mounted () {
-      this.interval = setInterval(() => {
-        if (this.value === 100) {
-          return (this.value = 0)
+      // this.interval = setInterval(() => {
+      //   if (this.value === 100) {
+      //     return (this.value = 0)
+      //   }
+      //   this.value += 10
+      // }, 1000),
+
+      this.intervalUsed = setInterval(() => {
+        if (this.valueUsed === 100) {
+          return (this.valueUsed = 0)
         }
-        this.value += 10
+        this.valueUsed += 10
+      }, 1000)
+
+      this.intervalRemaining = setInterval(() => {
+        if (this.valueRemaining === 100) {
+          return (this.valueRemaining = 0)
+        }
+        this.valueRemaining += 3
       }, 1000)
     }
 };
