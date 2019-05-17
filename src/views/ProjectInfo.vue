@@ -1,6 +1,5 @@
 <template>
-    <section >
-
+    <section>
  <v-layout class="tester" text-xs-center wrap>
       <v-flex mb-4 ma-2 white>
         <BudgetCard></BudgetCard>
@@ -26,7 +25,6 @@
     </v-layout>
   </section>
 </template>
-
 <script>
 import VelocityCard from "@/components/VelocityCard";
 import OverallRiskCard from "@/components/OverallRiskCard";
