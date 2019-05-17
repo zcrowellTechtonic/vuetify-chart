@@ -1,9 +1,9 @@
 <script>
   //Importing Bar class from the vue-chartjs wrapper
-  import { Doughnut } from 'vue-chartjs'
+  import { Pie } from 'vue-chartjs'
   //Exporting this so it can be used in other components
   export default {
-    extends: Doughnut,
+    extends: Pie,
     data () {
       return {
         datacollection: {
@@ -43,8 +43,6 @@
         // },
         //Chart.js options that controls the appearance of the chart
         options: {
-           rotation: 1 * Math.PI,
-            circumference: 1 * Math.PI,
           scales: {
             yAxes: [{
               ticks: {

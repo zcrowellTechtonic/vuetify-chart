@@ -25,7 +25,7 @@
       </v-flex>
       <v-flex mb-4 ma-2 white>
         <h3>Pie Chart</h3>
-        <PieChart></PieChart>
+        <PieChartWhole></PieChartWhole>
       </v-flex>
     </v-layout>
 
@@ -45,7 +45,7 @@
   import BarChart from '@/components/charts/BarChart'
   import BubbleChart from '@/components/charts/BubbleChart'
   import DoughnutChart from '@/components/charts/DoughnutChart'
-  import PieChart from '@/components/charts/PieChart'
+  import PieChartWhole from '@/components/charts/PieChartWhole'
   import Reactive from '@/components/charts/Reactive'
  
 
@@ -55,7 +55,7 @@
       LineChart,
       BarChart,
       BubbleChart,
-      PieChart,
+      PieChartWhole,
       DoughnutChart,
       Reactive
     },
